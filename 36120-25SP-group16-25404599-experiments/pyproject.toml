@@ -1,0 +1,43 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "nba_draft_prediction"
+version = "0.0.1"
+description = "AT1 - Kaggle Competition"
+authors = [
+  { name = "Masaru" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "==3.11.4"
+
+
+[tool.ruff]
+line-length = 99
+src = ["nba_draft_prediction"]
+include = ["pyproject.toml", "nba_draft_prediction/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["nba_draft_prediction"]
+force-sort-within-sections = true
+
+
+[tool.poetry.dependencies]
+scikit-learn = "1.5.1"
+pandas = "2.2.2"
+jupyterlab = "4.2.3"
+joblib = "1.4.2"
+xgboost = "2.1.0"
+hyperopt = "0.2.7"
+lightgbm = "4.4.0"
+lime = "0.2.0.1"
+wandb = "0.17.4"
